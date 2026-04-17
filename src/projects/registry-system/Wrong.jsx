@@ -27,7 +27,7 @@ export function Wrong() {
 
       <div className="flex space-x-4">
         <button
-          onClick={() => navigate(0)}
+          onClick={() => navigate("/projects/login")}
           type="button"
           className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition"
         >
