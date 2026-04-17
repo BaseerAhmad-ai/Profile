@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  word-spacing: 1px;
+  letter-spacing: 1px;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  height: 100dvh;
+  width: 100dvw;
+  overflow-x: hidden;
+  background-color: #b6b5b5;
+  /* background:url("../public/beautiful-road-going-through-farm-cornfield-with-tree-end-colorful-sky_181624-23214.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: end;
+  background-size: 100% 100%; */
+}

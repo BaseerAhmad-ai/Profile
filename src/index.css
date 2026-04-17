@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .input {
+    @apply  /*lg:h-11*/ w-[90%] shadow-lg px-4 py-1  rounded-md focus:border focus:border-teal-700 text-xl placeholder:text-base;
+  }
+}
+@layer components {
+  .icon {
+    @apply  hover:w-10 hover:rounded-xl size-10 text-xl grid place-items-center bg-teal-700 text-white rounded-[50%];
+  }
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  outline: none;
+}
+html {
+  font-size: 106.25%;
+}
+
+body {
+  min-width: 370px;
+  height: 100dvh;
+  width: 100%;
+  /* overflow-x: hidden; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}

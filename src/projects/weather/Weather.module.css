@@ -1,0 +1,160 @@
+h1{
+color: #252527;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background:url("../public/beautiful-road-going-through-farm-cornfield-with-tree-end-colorful-sky_181624-23214.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position:start;
+  background-size: 100% 150%;
+}
+form {
+  margin-top: 2rem;
+  position: relative;
+  margin-right: 2rem;
+  width: auto;
+  box-shadow: 0 0 7px 1px #ffffffe1;
+  & input,
+  & span {
+    font-size: 1.4rem;
+  }
+}
+input {
+  height: 2.6rem;
+  width: 26rem;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  background-color: #fcfcff;
+  &:focus-visible {
+    outline: 1px solid black;
+    border-radius: 1px;
+  }
+  border-radius: 3px;
+}
+header > form span {
+  background-color: #fcfcff;
+  height: 2rem;
+  position: absolute;
+  top: 2px;
+  right: 0;
+  width: 3rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0 3px 3px 0;
+  border-left: 1px solid black;
+}
+header > section {
+  color: aliceblue;
+  display: grid;
+  place-items: center;
+  & p:first-of-type {
+    text-transform: uppercase;
+  }
+  & p {
+    margin: 1rem auto;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  & h1 {
+    font-size: 5rem;
+    margin-left: 3rem;
+  }
+  & h2 {
+    text-transform: capitalize;
+  }
+}
+/* !===================== */
+main {
+  width: 100dvw;
+  height: auto;
+  background-attachment: fixed;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #e0e4fdf6;
+  box-shadow: 0 0 7px 1px #ffffff;
+  margin: auto;
+  & h2:first-of-type {
+    margin-block: 1rem;
+    /* background-color: cadetblue; */
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+  & section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    row-gap: 2rem;
+    padding: 2rem;
+  }
+
+  & .card {
+    /* background-color: blue; */
+    background-color: #ffffff;
+    margin: 1rem auto;
+    width: 27rem;
+    padding: 1rem;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    & div:last-of-type {
+      width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    margin: 0.6rem 0 1rem ;
+    text-transform: capitalize;
+    } 
+    & div:first-of-type {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 1rem;
+
+      & span {
+        height: 2.5rem;
+        width: 2.5rem;
+        display: flex;
+        justify-content: center;
+        background-color: #4780fa;
+        border-radius: 3px;
+        color: #fcfcff;
+        font-size: 1.9rem;
+      }
+      & h3 {
+        text-transform: capitalize;
+        font-size: 1.5rem;
+      }
+    }
+    & h4 {
+      font-size: 1.9rem;
+    }
+  }
+}
+
+progress {
+  width: 100%;
+  height: 12px;
+  accent-color: #4780fa;
+}
+
+img{
+height: 30px;
+width: 30px;
+}
+p,h2{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+header ~ h2 {
+  width: 15rem;
+  margin: 10px;
+  color: #fcfcff;
+  align-self: start;
+}

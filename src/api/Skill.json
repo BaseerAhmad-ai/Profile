@@ -1,0 +1,50 @@
+[
+  {
+    "value": "100",
+    "txt": "HTML 5",
+    "id": "item1",
+    "icon":"fa-html5"
+  },
+  {
+    "value": "96",
+    "txt": "CSS 3",
+    "id": "item2",
+    "icon":"fa-css3"
+  },
+  {
+    "value": "95",
+    "txt": "java script",
+    "id": "item3",
+    "icon":"fa-js"
+  },
+  {
+    "value": "80",
+    "txt": "react.js",
+    "id": "item4",
+    "icon":"fa-react"
+  },
+  {
+    "value": "90",
+    "txt": "tailwind",
+    "id": "item5",
+    "icon":"fa-"
+  },
+  {
+    "value": "100",
+    "txt": "git & github",
+    "id": "item6",
+    "icon":"fa-github"
+  },
+  {
+    "value": "85",
+    "txt": "type script",
+    "id": "item7",
+    "icon":"fa-"
+  },
+  {
+    "value": "92",
+    "txt": "node.js",
+    "id": "item8",
+    "icon":"fa-node-js"
+  }
+]

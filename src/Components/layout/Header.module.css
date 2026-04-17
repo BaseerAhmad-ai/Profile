@@ -1,0 +1,98 @@
+/*! ========================================================================== */
+/*  -------------------------------------#header------------------------------ */
+/*! ========================================================================== */
+header {
+    height: 3rem;
+    position: fixed;
+    top: 0;
+    text-transform: uppercase;
+    z-index: 1;
+    background-attachment: fixed;
+    background-color: var(--bg-nav);
+
+  }
+  
+  header nav {
+    height: 3rem;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 90dvw;
+    
+  }
+  
+  header nav > .logo {
+    color: var(--p-white);
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  
+  header nav ul {
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+    padding: 0.4rem;
+  }
+  
+  header nav ul li {
+    list-style: none;
+    padding: 0.3rem;
+  }
+  
+  header nav ul li a {
+    text-decoration: none;
+    letter-spacing: 0.05rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--p-white);
+  }
+  
+  header nav ul li:last-of-type > a {
+    color: var(--p-blue);
+    font-weight: 600;
+  }
+  
+  header nav ul li:last-of-type {
+    background-color: var(--p-white);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    padding: 0.4rem;
+}
+  
+  header nav ul li:hover {
+    border-bottom: 0.2rem solid var(--p-white);
+    text-shadow: 0 0 5px 3px var(--p-white);
+    padding-bottom: 0.1rem;
+  }
+  header nav ul li:last-of-type:hover {
+    border: 0px;
+    box-shadow: 0 0 0.4rem 0.1rem var(--p-white);
+    padding-bottom: 0.4rem;
+  }
+  
+  header nav ul .menu {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--p-white);
+    width: 3rem;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    display: none;
+  }  
+  @media (width <=450px) {
+    header > nav .link_nav ul li {
+      display: none;
+    }
+    header nav ul .menu {
+      display: grid;
+    }
+  
+  }

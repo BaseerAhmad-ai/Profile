@@ -1,0 +1,152 @@
+/*! ========================================================================== */
+/*  ------------------------------------#contact------------------------------ */
+/*! ========================================================================== */
+
+.contact_section {
+    height: auto;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--bg-color);
+    background-attachment: fixed;
+  width: 100lvw;
+  }
+  
+  .contact_section h3 {
+    color: var(--p-white);
+    font-size: 2.5rem;
+    padding: 0.9rem;
+    letter-spacing: 0.2rem;
+    text-transform: capitalize;
+    margin-left: 2.7rem;
+    font-weight: 600;
+    align-self: start;
+  }
+  
+  section form {
+    height: auto;
+    padding: 1rem;
+    width: 90%;
+    margin: 0.7rem auto;
+  }
+  
+  section form .contact_para {
+    color: var(--p-white);
+    font-size: 1.5rem;
+    padding: 0.9rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    line-height: 1.8;
+    font-weight: 600;
+  }
+  
+  section form input {
+    height: 3rem;
+    width: 80%;
+    margin: 0.6rem auto;
+    padding: 0.8rem;
+    border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    -ms-border-radius: 0.3rem;
+    -o-border-radius: 0.3rem;
+    font-size: 1.1rem;
+    background-color: var(--p-white);
+  }
+  
+  section form textarea {
+    margin: 0.6rem auto;
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    -ms-border-radius: 0.3rem;
+    -o-border-radius: 0.3rem;
+    font-size: 1.1rem;
+    height: 7rem;
+    width: 80%;
+    margin: 0.6rem auto;
+    background-color: var(--p-white);
+  }
+  
+  .label {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 77%;
+    margin: auto;
+  }
+  
+  section form label {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    color: var(--p-white);
+  }
+  
+  section form input::placeholder {
+    font-size: 1.1rem;
+  }
+  
+  section form button {
+    display: block;
+    margin: 0.6rem auto;
+    height: 3rem;
+    width: 40%;
+    display: grid;
+    place-items: center;
+    border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    -ms-border-radius: 0.3rem;
+    -o-border-radius: 0.3rem;
+    font-size: 1.5rem;
+    background-color: var(--p-white);
+    color: var(--bg-color);
+    letter-spacing: 0.1rem;
+    border: none;
+    outline: none;
+
+  }
+  section form button:hover {
+    box-shadow: 0 0 5px 2px var(--p-white);
+  }
+  
+  .link_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 77%;
+    height: 4rem;
+    padding: 0.5rem;
+    gap: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .link_div .links {
+    width: 4rem;
+    height: 4rem;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    background-color: var(--bg-nav);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }  
+
+  @media (width <=450px) {  
+    section form {
+      width: 100%;
+    }
+  
+    section form input,
+    section form textarea,
+    section form button {
+      width: 100%;
+    }
+  }
+  
