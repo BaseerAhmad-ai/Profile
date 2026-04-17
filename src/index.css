@@ -3,12 +3,12 @@
 @tailwind utilities;
 @layer components {
   .input {
-    @apply  /*lg:h-11*/ w-[90%] shadow-lg px-4 py-1  rounded-md focus:border focus:border-teal-700 text-xl placeholder:text-base;
+    @apply  w-[90%] h-[clamp(2.2rem,10vw,2.9rem)] shadow-lg px-4 py-1  rounded-md focus:border focus:border-teal-700 text-xl placeholder:text-base;
   }
 }
 @layer components {
   .icon {
-    @apply  hover:w-10 hover:rounded-xl size-10 text-xl grid place-items-center bg-teal-700 text-white rounded-[50%];
+    @apply  hover:size-10 hover:rounded-xl size-[clamp(2.5rem,5vw,4rem)] text-[clamp(0.6rem,5vw,1.5rem)] grid place-items-center bg-teal-700 text-white rounded-[50%];
   }
 }
 *{

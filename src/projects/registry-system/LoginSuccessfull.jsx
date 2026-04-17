@@ -1,23 +1,11 @@
+import { useNavigate } from "react-router-dom";
 export  function LoginSuccess() {
+  const navigate=useNavigate()
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
-        <div className="bg-white shadow-lg rounded-2xl flex max-w-4xl w-full overflow-hidden">
-  
-          {/* Left Side (Illustration) */}
-          <div className="hidden md:flex w-1/2 bg-green-50 items-center justify-center">
-            <img
-              src="https://img.freepik.com/free-vector/successful-login-concept-illustration_114360-742.jpg"
-              alt="Success Illustration"
-              className="p-6"
-            />
-          </div>
-  
-          {/* Right Side (Content) */}
-          <div className="w-full md:w-1/2 p-8 flex flex-col justify-center items-center text-center">
-            
-            <div className="bg-green-100 text-green-600 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+          <div className="h-full w-full bg-green-100 flex flex-col justify-center items-center text-center">
+            <div className="bg-green-200 text-green-600 rounded-full size-24 flex items-center justify-center mb-10">
               <svg
-                className="w-8 h-8"
+                className="size-20"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -31,24 +19,28 @@ export  function LoginSuccess() {
               </svg>
             </div>
   
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">
+            <h1 className="text-4xl font-bold text-gray-800 mb-4">
               Login Successful!
-            </h2>
+            </h1>
   
-            <p className="text-gray-500 mb-6">
+            <p className="text-gray-500 mb-10 text-2xl">
               You have successfully logged into your account.
             </p>
-  
+            <div className="sm:flex sm:justify-center sm:gap-7">
             <button
-              type="button"
-              className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition"
+              className=" text-2xl w-[12rem] bg-green-200  h-14 mt-[clamp(1.3rem,5vw,0.6rem)] input  text-green-700"
+              onClick={() => navigate("/")}
             >
-              Go to Dashboard
+              Go to home
+            </button>
+             <button
+              className=" text-2xl w-[12rem] bg-green-200  h-14 mt-[clamp(1.3rem,5vw,0.6rem)] input  text-green-700"
+              onClick={() => navigate(-1)}
+            >
+              Go back
             </button>
   
+            </div>
           </div>
-  
-        </div>
-      </div>
     );
   }

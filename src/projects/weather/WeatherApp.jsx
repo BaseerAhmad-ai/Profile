@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./styles/index.css";
 import style from "./styles/Weather.module.css";
+import VITE_WEATHER_API_KEY from "../../.env"
 // import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 // import { RechartsDevtools } from '@recharts/devtools';   
 export function Weather() {
@@ -23,7 +24,7 @@ export function Weather() {
   const [input, setInput] = useState("");
   const [error, setError] = useState(false);
   const [time, setTime] = useState(new Date().toLocaleTimeString())
-  const [URL, setURL] = useState(`http://api.openweathermap.org/data/2.5/weather?q=islamabad&APPID=20e88d74a36f545ce9f4a754c76a5f08`)
+  const [URL, setURL] = useState(`http://api.openweathermap.org/data/2.5/weather?q=islamabad&APPID=${VITE_WEATHER_API_KEY}`)
   document.title = "Weather App";
   let intervalId;
  useEffect(() => {

@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "../Components/layout/Layout"
 import { Error } from "./Error"
-import { Wrong } from "./Wrong"
 //!===========================================================================//
 import { Home } from "../pages/Home";
 import { About } from "../pages/About";
@@ -9,8 +8,9 @@ import { Skills } from "../pages/Skills";
 import { Contact } from "../pages/Contact";
 import { Project } from "../pages/Projects";
 import { SignUp, form } from "../projects/registry-system/SignUp";
-import { Login} from "../projects/registry-system/Login";
+import { Login, loginForm} from "../projects/registry-system/Login";
 import { LoginSuccess } from "../projects/registry-system/LoginSuccessfull";
+import { Wrong } from "../projects/registry-system/Wrong";
 //!===========================================================================//
 export const router = createBrowserRouter([
     {
@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
       ],
     },
     { path: "projects/signup", element: <SignUp />,action:form },
-    { path: "projects/login", element: <Login /> },
+    { path: "projects/login", element: <Login />,action:loginForm },
     { path: "projects/success", element: <LoginSuccess /> },
-    { path: "projects/faildlogin", element: <Wrong /> },
+    { path: "projects/faild", element: <Wrong /> },
   ]);

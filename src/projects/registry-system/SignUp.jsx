@@ -3,8 +3,14 @@ import { IoLogoFacebook, IoLogoGithub, IoLogoGoogle } from "react-icons/io5";
 export const form = async ({ request }) => {
   try {
     const res = await request.formData();
-    const data = Object.fromEntries(res);
-    console.log(data, res);
+    let data = Object.fromEntries(res);
+    const existing = JSON.parse(localStorage.getItem("auth")) || [];
+    // console.log(existing);
+   const exist = existing.some((item) => item.email === data.email);
+   if(exist)throw new Error("this email already taken");
+    existing.push(data);
+    // console.log(existing);
+    localStorage.setItem("auth", JSON.stringify(existing));
     return null;
   } catch (error) {
     console.log(error);
@@ -13,21 +19,17 @@ export const form = async ({ request }) => {
 export function SignUp() {
   const navigate = useNavigate();
   return (
-    // lg:place-items-center
-    <div className="h-dvh w-dvw bg-gray-100 grid ">
-      <div className="h-dvh w-dvw  overflow-hidden bg-teal-700 flex ">
-        {/* lg:rounded-xl lg:shadow-xl lg:w-[80dvw]lg:h-3/4  lg:items-center lg:gap-5 lg:justify-around*/}
-        <div className="h-dvh w-dvw bg-gray-100 sm:max-w-fit  ">
-          {/*lg:ml-4 lg:h-full lg:w-3/4*/}
-          <h1 className="text-3xl font-bold p-4 text-teal-700">
+    <div className="h-dvh w-dvw bg-gray-100 grid md:place-items-center">
+      <div className="h-dvh w-dvw  overflow-hidden bg-teal-700 flex md:shadow-xl md:rounded-xl md:w-3/4 md:h-[90%] ">
+        <div className="h-dvh w-dvw bg-gray-100 md:ml-4 ">
+          <h1 className="text-[clamp(1rem,5vw,2rem)] font-bold p-4 text-teal-700">
             Create Account
           </h1>
           <Form
-            action="/signup"
             method="POST"
-            className="w-full  p-4 grid justify-items-center gap-5"
+            className="w-full  p-4 lg:p-2 grid justify-items-center gap-5 lg:gap-2"
           >
-            <div className="flex gap-3 justify-center ">
+            <div className="flex gap-[clamp(0.5rem,5vw,2.5rem)] justify-center ">
               <div className="icon">
                 <IoLogoGoogle />
               </div>
@@ -38,7 +40,7 @@ export function SignUp() {
                 <IoLogoGithub />
               </div>
             </div>
-            <p className="text-xl font-bold text-teal-700">
+            <p className=" font-normal text-teal-700 text-[clamp(0.6rem,5vw,1.3rem)]">
               Or use email for registration
             </p>
             <input
@@ -65,19 +67,16 @@ export function SignUp() {
               className="input"
               required
             />
-            <button
-              className="w-2/3  input hover:shadow-lg hover:bg-slate-200 hover:text-teal-700 bg-teal-700 text-white"
-              // onClick={() => navigate("/login")}
-            >
+            <button className="w-2/3 mt-[clamp(1.3rem,5vw,0.6rem)] input hover:shadow-lg hover:bg-slate-200 hover:text-teal-700 bg-teal-700 text-white">
               Sign in
             </button>
           </Form>
 
-          <p className=" ml-2 text-sm text-gray-500 ">
+          <p className="mt-[clamp(1.3rem,5vw,0.6rem)] ml-[clamp(0.6rem,5vw,1.3rem)] lg:mt-[0.2rem] text-gray-500 text-[clamp(0.6rem,5vw,1.3rem)]">
             Already have an account?
             <span
-              // onClick={() => navigate("/login")}
-              className="text-teal-700 hover:underline"
+              onClick={() => navigate("/projects/login")}
+              className="text-teal-700 hover:underline text-[clamp(0.6rem,5vw,1.3rem)] lg:mt-[0.2rem]"
             >
               Login
             </span>
@@ -92,8 +91,7 @@ export function SignUp() {
     </div>
   );
 }
-// vsm:370px
-// lsm:520px
+// xs:480px
 // sm:640px
 // md:768px
 // lg:1024px
