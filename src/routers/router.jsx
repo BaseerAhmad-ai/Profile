@@ -7,7 +7,7 @@ import { About } from "../pages/About";
 import { Skills } from "../pages/Skills";
 import { Contact } from "../pages/Contact";
 import { Project } from "../pages/Projects";
-import { SignUp, form } from "../projects/registry-system/SignUp";
+import { SignUp, action } from "../projects/registry-system/SignUp";
 import { Login, loginForm} from "../projects/registry-system/Login";
 import { LoginSuccess } from "../projects/registry-system/LoginSuccessfull";
 import { Wrong } from "../projects/registry-system/Wrong";
@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
         { path: "/contact", element: <Contact /> },
       ],
     },
-    { path: "projects/signup", element: <SignUp />,action:form },
+    { path: "projects/signup", element: <SignUp />,action:action },
     { path: "projects/login", element: <Login />,action:loginForm },
     { path: "projects/success", element: <LoginSuccess /> },
     { path: "projects/faild", element: <Wrong /> },
