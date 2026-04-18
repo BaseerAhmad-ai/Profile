@@ -1,7 +1,7 @@
 /*! ========================================================================== */
-/*  -------------------------------------#header------------------------------ */
+/*  -------------------------------------#.header------------------------------ */
 /*! ========================================================================== */
-header {
+.header {
     height: 3rem;
     position: fixed;
     top: 0;
@@ -12,7 +12,7 @@ header {
 
   }
   
-  header nav {
+  .header nav {
     height: 3rem;
     display: flex;
     justify-content:space-around;
@@ -21,7 +21,7 @@ header {
     
   }
   
-  header nav > .logo {
+  .header nav > .logo {
     color: var(--p-white);
     text-transform: capitalize;
     letter-spacing: 0.1rem;
@@ -29,7 +29,7 @@ header {
     font-weight: 600;
   }
   
-  header nav ul {
+  .header nav ul {
     height: 3rem;
     display: flex;
     justify-content: center;
@@ -38,12 +38,12 @@ header {
     padding: 0.4rem;
   }
   
-  header nav ul li {
+  .header nav ul li {
     list-style: none;
     padding: 0.3rem;
   }
   
-  header nav ul li a {
+  .header nav ul li a {
     text-decoration: none;
     letter-spacing: 0.05rem;
     font-size: 1.2rem;
@@ -51,12 +51,12 @@ header {
     color: var(--p-white);
   }
   
-  header nav ul li:last-of-type > a {
+  .header nav ul li:last-of-type > a {
     color: var(--p-blue);
     font-weight: 600;
   }
   
-  header nav ul li:last-of-type {
+  .header nav ul li:last-of-type {
     background-color: var(--p-white);
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
@@ -66,18 +66,18 @@ header {
     padding: 0.4rem;
 }
   
-  header nav ul li:hover {
+  .header nav ul li:hover {
     border-bottom: 0.2rem solid var(--p-white);
     text-shadow: 0 0 5px 3px var(--p-white);
     padding-bottom: 0.1rem;
   }
-  header nav ul li:last-of-type:hover {
+  .header nav ul li:last-of-type:hover {
     border: 0px;
     box-shadow: 0 0 0.4rem 0.1rem var(--p-white);
     padding-bottom: 0.4rem;
   }
   
-  header nav ul .menu {
+  .header nav ul .menu {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--p-white);
@@ -88,10 +88,10 @@ header {
     display: none;
   }  
   @media (width <=450px) {
-    header > nav .link_nav ul li {
+    .header > nav .link_nav ul li {
       display: none;
     }
-    header nav ul .menu {
+    .header nav ul .menu {
       display: grid;
     }
   

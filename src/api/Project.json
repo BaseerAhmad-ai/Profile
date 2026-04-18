@@ -1,10 +1,8 @@
 [
-  { "txt": "responsiv protfolio", "url": "home" },
   { "txt": "to-do list app", "url": "" },
   { "txt": "weather app", "url": "" },
   { "txt": "registr system", "url": "projects/signup" },
   { "txt": "e-commerce", "url": "" },
   { "txt": "job portle", "url": "" },
-  { "txt": "image gallery", "url": "" },
-  { "txt": "web components", "url": "" }
+  { "txt": "image gallery", "url": "projects/gallery" }
 ]

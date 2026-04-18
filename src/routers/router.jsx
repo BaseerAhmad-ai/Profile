@@ -11,6 +11,7 @@ import { SignUp, action } from "../projects/registry-system/SignUp";
 import { Login, loginForm} from "../projects/registry-system/Login";
 import { LoginSuccess } from "../projects/registry-system/LoginSuccessfull";
 import { Wrong } from "../projects/registry-system/Wrong";
+import { Gallery } from "../projects/gallery/Gallery";
 //!===========================================================================//
 export const router = createBrowserRouter([
     {
@@ -30,4 +31,6 @@ export const router = createBrowserRouter([
     { path: "projects/login", element: <Login />,action:loginForm },
     { path: "projects/success", element: <LoginSuccess /> },
     { path: "projects/faild", element: <Wrong /> },
+    { path: "projects/gallery", element: <Gallery /> },
+
   ]);
