@@ -8,7 +8,7 @@ return (
     <!-- *------------------- #footer---------------------------------------- -->
     <!--! =================================================================== --> */}
 
-<footer>
+<footer className="footer">
         <div className={`${style.upper_footer}`}>
           <div className={`${style.section1}`}>
             <h4>contact</h4>

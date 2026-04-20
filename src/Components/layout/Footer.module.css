@@ -3,14 +3,14 @@
 /*  -------------------------------------#footer------------------------------ */
 /*! ========================================================================== */
 
-footer {
+.footer {
     height: 15rem;
     padding: 1rem;
     background-color: var(--bg-nav);
     background-attachment: fixed;
   width: 100lvw;
   }
-  footer li {
+  .footer li {
     list-style-type: none;
   }
   .upper_footer {
@@ -49,15 +49,15 @@ footer {
     text-transform: capitalize;
   }
   
-  footer .section2 a {
+  .footer .section2 a {
     text-decoration: none;
   }
   
-  footer .section2 a:hover {
+  f.ooter .section2 a:hover {
     text-decoration: underline;
   }
   
-  footer .section3 p {
+  .footer .section3 p {
     color: var(--p-white);
     font-size: 0.7rem;
     padding: 0.6rem;
@@ -65,7 +65,7 @@ footer {
     letter-spacing: 0.1rem;
   }
   
-  footer .section3 {
+  .footer .section3 {
     width: 33.33%;
   }
   

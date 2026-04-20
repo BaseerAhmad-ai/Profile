@@ -3,15 +3,30 @@
 @tailwind utilities;
 @layer components {
   .input {
-    @apply  w-[90%] h-[clamp(2.2rem,10vw,2.9rem)] shadow-lg px-4 py-1  rounded-md focus:border focus:border-teal-700 text-xl placeholder:text-base;
+    @apply w-[90%] h-[clamp(2.2rem,10vw,2.9rem)] shadow-lg px-4 py-1  rounded-md focus:border focus:border-teal-700 text-xl placeholder:text-base;
   }
 }
 @layer components {
   .icon {
-    @apply  hover:size-10 hover:rounded-xl size-[clamp(2.5rem,5vw,4rem)] text-[clamp(0.6rem,5vw,1.5rem)] grid place-items-center bg-teal-700 text-white rounded-[50%];
+    @apply hover:size-10 hover:rounded-xl size-[clamp(2.5rem,5vw,4rem)] text-[clamp(0.6rem,5vw,1.5rem)] grid place-items-center bg-teal-700 text-white rounded-[50%];
   }
 }
-*{
+@layer components {
+  .photo_card {
+    @apply w-[clamp(190px,5vw,400px)] h-[clamp(190px,5vw,300px)];
+  }
+}
+@layer components {
+  .ul {
+    padding:40px;
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  row-gap:20px;
+  column-gap: 40px;
+  }
+}
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;

@@ -6,7 +6,7 @@ return (
       <!-- *------------------- #hero------------------- -->
       <!--! =================================================================== --> */}
 
-<main>
+<main className="hero_main">
           <section className={`${style.hero}`}>
             <div className={`${style.txt}`}>
               <h1>Welcome to my protfolio</h1>

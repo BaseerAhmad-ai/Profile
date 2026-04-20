@@ -1,9 +1,9 @@
 
-section img::selection {
+.section img::selection , .hero img {
   color: #ffff;
   opacity: 0;
 }
-section img {
+.section img ,.hero img{
   border: 0.2rem solid var(--p-white);
   box-shadow: 1px 2px 5px 1px var(--p-white);
   border-radius: 15%;
