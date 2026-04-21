@@ -7,51 +7,62 @@ export function Gallery() {
   const id = useId();
   const env = import.meta.env.VITE_Gallery_API_KEY;
   const [api, setApi] = useState([]);
+  const [type, setType] = useState("beautiful");
+  const [data, setData] = useState([]);
+  const [cat, setCat] = useState("nature");
   const [input, setInput] = useState("");
-  const [URL, setURL] = useState(
-    `https://api.unsplash.com/search/photos/?query=nature&per_page=5&client_id=${env}`
-  );
-  const fetchData = async () => {
-    try {
-      const res = await fetch(URL);
-      const data = await res.json();
-      console.log(data);
-      setApi(data.results);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const handleNav = (e) => {
-    setURL(
-      `https://api.unsplash.com/search/photos/?query=${e.target.innerText}&per_page=5&client_id=${env}`
-    );
-  };
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch( `https://api.unsplash.com/search/photos/?query=${type} ${cat}&per_page=29&client_id=${env}`);
+        const data = await res.json();
+        setApi(data.results);
+        setData(data.results);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     fetchData();
-  }, [URL]);
+  }, [type,cat]);
+  const handleNav = (e) => {
+    setCat(e.target.innerText);
+  };
+  const handleType = (e) => {
+    setType(e.target.value); 
+  };
+  const handleInput = (e) => {
+    setInput(e);
+    const filter = api.filter((item) =>
+      (item.alt_description || item.description)
+        .toLowerCase()
+        .includes(e.toLowerCase())
+    );
+    setData(filter);
+  }; 
   return (
     <div className="h-dvh w-dvw bg-gray-100 grid md:place-items-center">
-      <div className="h-dvh w-dvw  overflow-hidden  bg-cyan-500  ">
+      <div className="h-dvh w-dvw  overflow-hidden  bg-slate-100">
         <header className="w-full mb-5 h-[clamp(2rem,10vw,3rem)] bg-slate-200 flex justify-evenly items-center ">
           <div className="h-full flex items-center px-3 py-1 font-bold text-xl">
             <h1>Image Gallery</h1>
           </div>
           <nav className="max-xs:hidden w-[clamp(40%,10vw,30%)] grid place-items-center">
-            <ul className=" text-cyan-500 font-semibold  [&>*]:border-cyan-500 [&>*]:transition [&>*]:px-2 capitalize w-full flex justify-evenly items-center">
+            <ul className=" text-black font-semibold [&>*]:cursor-pointer  [&>*]:border-black [&>*]:transition [&>*]:px-2 capitalize w-full flex justify-evenly items-center">
+              <li className="hover:border-b-2" onClick={(e) => handleNav(e)}>
+                nature
+              </li>
               <li className="hover:border-b-2" onClick={(e) => handleNav(e)}>
                 food
               </li>
               <li className="hover:border-b-2" onClick={(e) => handleNav(e)}>
-                park
+                places
               </li>
               <li className="hover:border-b-2" onClick={(e) => handleNav(e)}>
-                game
+                events
               </li>
+
               <li className="hover:border-b-2" onClick={(e) => handleNav(e)}>
-                uk
-              </li>
-              <li className="hover:border-b-2" onClick={(e) => handleNav(e)}>
-                pakistan
+                sea animal
               </li>
             </ul>
           </nav>
@@ -59,8 +70,8 @@ export function Gallery() {
             <button
               onClick={() => navigate("/projects/signup")}
               type="button"
-              className=" max-[480px]:hidden bg-cyan-600 text-white px-6 py-1 h-[90%] rounded-lg hover:bg-cyan-700 transition"
-            >
+              className="  max-[480px]:hidden border border-gray-300 h-[90%] text-gray-700 px-6 py-1 rounded-lg hover:bg-gray-100 transition"
+             >
               Sign up
             </button>
 
@@ -68,7 +79,7 @@ export function Gallery() {
               onClick={() => navigate("/projects/login")}
               type="button"
               className=" max-[480px]:hidden border border-gray-300 h-[90%] text-gray-700 px-6 py-1 rounded-lg hover:bg-gray-100 transition"
-            >
+           >
               login
             </button>
           </div>
@@ -76,58 +87,59 @@ export function Gallery() {
             <FaBars />
           </div>
         </header>
-        <section className="flex justify-evenly items-center p-2">
-          <div className="relative w-2/3 flex flex-col justify-between items-start p-2 ml-5">
+        <section className="flex justify-evenly items-center p-1">
+          <div className="relative w-2/3 flex flex-col justify-between items-start p-2 ml-1">
             <input
               id={id}
               name="search"
               type="text"
-              className="bg-gray-200 peer focus:border focus:border-cyan-900 h-[clamp(0.9rem,5vw,2rem)] w-2/3 text-xl rounded-md py-1 px-2 group-focus:border-cyan-900 "
+              className="bg-gray-300 peer focus:border focus:border-slate-300 h-[clamp(0.9rem,5vw,2rem)] w-2/3 text-xl rounded-md py-1 px-2 group-focus:border-cyan-900 "
               required
               autoComplete="off"
               value={input}
               onChange={(e) => handleInput(e.target.value)}
+              placeholder="search .."
             />
-            <label
-              htmlFor={id}
-              className="peer-focus:top-[-13px]  transition peer-focus:text-gray-700 peer-placeholder-shown:text-[clamp(0.5rem,5vw,1.2rem)] peer-placeholder-shown:top-2 text-[clamp(0.7rem,5vw,1.4rem)] absolute  left-4 "
-            >
-              Search
-            </label>
+            <label htmlFor={id}></label>
             <span className="absolute left-[59%] top-4 peer-focus:hidden text-xl">
               <FaSearch />
             </span>
           </div>
-          <div className="">
-            <label
-              htmlFor="upload"
-              className="bg-gray-200 hover:bg-gray-100 flex  items-center border gap-1 border-gray-500 h-[2.2rem] text-gray-700  px-6 py-1 rounded-lg transition"
-            >
-              <FaPlus />
-              <p className="text-xl font-semibold ">Upload</p>
+          <div className="flex gap-4">
+            <label htmlFor="options">
+              <select
+                name="filter"
+                id="options"
+                onChange={(e) => handleType(e)}
+                className="font-normal [&>*]:font-normal  bg-gray-300 w-32 h-7 px-2 rounded-sm"
+              >
+                <option value="buetiful">All</option>
+                <option value="latest buetiful">Latest</option>
+                <option value="oldest buetiful">Oldest</option>
+                <option value="popular buetiful">Popular</option>
+              </select>
             </label>
-            <input
-              type="file"
-              accept="image/*"
-              id="upload"
-              className="hidden"
-            />
+            <label htmlFor="sort">
+              <select
+                id="sort"
+                className="font-normal  [&>*]:font-normal  bg-gray-300 w-32 h-7 px-2 rounded-sm"
+              >
+                <option value="sort">Sort</option>
+                <option value="name">Name</option>
+                <option value="az">A-Z</option>
+                <option value="za">Z-A</option>
+              </select>
+            </label>
           </div>
         </section>
-        <div className="h-1 bg-gray-100 w-full"></div>
-        <main className="mt-3  w-full  h-[79%]  mx-auto">
+        <main className="mt-1 w-full  h-[79%]  mx-auto">
           <ul className="ul h-full w-full overflow-y-auto ">
-            <li className="group relative h-auto  w-full aspect-square bg-white rounded-xl overflow-hidden shadow cursor-pointer">
-              <input
-                type="file"
-                accept="image/*"
-                id="upload-image"
-                className="hidden"
-              />
+            <li className="group relative h-80   w-full  bg-white rounded-sm overflow-hidden shadow cursor-pointer">
+              <input type="file" accept="image/*" id={id} className="hidden" />
 
               <label
-                htmlFor="upload-image"
-                className="w-full h-full flex flex-col items-center justify-center gap-3 bg-gray-100 hover:bg-gray-200 transition"
+                htmlFor={id}
+                className="w-full h-full flex flex-col items-center justify-center gap-3 bg-gray-50 hover:bg-gray-100 transition"
               >
                 <FaPlus className="text-3xl text-gray-600" />
                 <p className="text-gray-700 font-semibold">Upload</p>
@@ -138,14 +150,12 @@ export function Gallery() {
               </div>
             </li>
 
-            {api.map((items) => (
-              <ImageCard key={items.id} image={items} />
+            {data.map((items) => (
+              <ImageCard key={items.id} image={items} input={input} />
             ))}
           </ul>
         </main>
-        <div className="h-1 bg-gray-100 w-full"></div>
-
-        <footer className="flex justify-between px-5 bg-gray-200 w-full h-[clamp(2rem,10vw,3rem)]">
+        {/* <footer className="flex justify-between px-5 bg-gray-200 w-full h-[clamp(2rem,10vw,3rem)]">
           <button className="h-[2.2rem] bg-cyan-600 text-white px-6 py-2 rounded-lg transition">
             Edit & Show
           </button>
@@ -158,7 +168,7 @@ export function Gallery() {
               Select
             </button>
           </div>
-        </footer>
+        </footer> */}
       </div>
     </div>
   );
